@@ -1,0 +1,292 @@
+/***************************************/
+/** Papyrus stylesheet for UAF models  */
+/** Created by Thomas Wiman, Adocus AB */
+/***************************************/
+
+/** Standard settings for all elements */
+* {
+	gradient:none;
+	elementIcon: false;
+	isNameWrap: true;
+	displayTags: false;
+}
+
+/** Hide all compartments for all elements */
+Compartment {
+    visible:false;
+}
+
+Class > Compartment[kind="attributes"]  {
+    visible:false;  /** Set to true if attributes should be visible within classes*/
+}
+
+Class > Compartment[kind="attributes"]  {
+    visible:false;  /** Set to true if operation should be visible within classes */
+}
+
+DataType {
+	canonical: true;
+}
+
+DataType > Compartment[kind="attributes"]  {
+    visible:true;  
+}
+
+Enumeration {
+	canonical: true;
+}
+
+Enumeration > Compartment[kind="literals"] {
+    visible:true;
+}
+
+[appliedStereotypes~=ActualMeasurementSet] {
+	canonical: true;
+}
+
+[appliedStereotypes~=ActualMeasurementSet] > Compartment[kind="slots"] {
+    visible:true;
+}
+
+/** ActualResources */
+[appliedStereotypes~=ActualService],
+[appliedStereotypes~=ProvidedServiceLevel],
+[appliedStereotypes~=ProvidesCompetence],
+[appliedStereotypes~=RequiredServiceLevel],
+[appliedStereotypes~=ActualOrganizationRole],
+[appliedStereotypes~=ActualResourceRole],
+[appliedStereotypes~=ActualOrganization],
+[appliedStereotypes~=ActualOrganizationalResource],
+[appliedStereotypes~=ActualPerson],
+[appliedStereotypes~=ActualPost],
+[appliedStereotypes~=ActualResource],
+[appliedStereotypes~=ActualResponsibility],
+[appliedStereotypes~=ActualResponsibleResource],
+[appliedStereotypes~=FieldedCapability] {
+	fillColor: #595959;
+	fontColor: #FFFFFF
+}
+
+/** Metadata */
+[appliedStereotypes~=Resource],
+[appliedStereotypes~=Rule],
+[appliedStereotypes~=Activity],
+[appliedStereotypes~=CapableElement],
+[appliedStereotypes~=ActualState],
+[appliedStereotypes~="ISO8601 DateTime"],
+[appliedStereotypes~=ArchitecturalReference] {
+	fillColor: #FFFFCC;
+	fontColor: #000000
+}
+
+/** Operational */
+[appliedStereotypes~=OperationalInterface],
+[appliedStereotypes~=OperationalSignal],
+[appliedStereotypes~=OperationalSignalProperty],
+[appliedStereotypes~=OperationalConstraint],
+[appliedStereotypes~=SubjectOfOperationalConstraint],
+[appliedStereotypes~=OperationalMessage],
+[appliedStereotypes~=OperationalActivity],
+[appliedStereotypes~=OperationalActivityAction],
+[appliedStereotypes~=StandardOperationalActivity],
+[appliedStereotypes~=OperationalStateDescription],
+[appliedStereotypes~=KnownResource],
+[appliedStereotypes~=OperationalAgent],
+[appliedStereotypes~=OperationalArchitecture],
+[appliedStereotypes~=OperationalMethod],
+[appliedStereotypes~=OperationalParameter],
+[appliedStereotypes~=OperationalPerformer],
+[appliedStereotypes~=OperationalPort],
+[appliedStereotypes~=OperationalRole],
+[appliedStereotypes~=ProblemDomain],
+[appliedStereotypes~=ArbitraryConnector],
+[appliedStereotypes~=ConceptItem],
+[appliedStereotypes~=ConceptRole],
+[appliedStereotypes~=HighLevelOperationalConcept] {
+	fillColor: #8EB4E3;
+	fontColor: #000000
+}
+
+/** Parameters */
+[appliedStereotypes~=ActualCondition],
+[appliedStereotypes~=ActualEnvironment],
+[appliedStereotypes~=ActualLocation],
+[appliedStereotypes~=ActualMeasurement],
+[appliedStereotypes~=ActualMeasurementSet],
+[appliedStereotypes~=ActualPropertySet],
+[appliedStereotypes~=Condition],
+[appliedStereotypes~=Environment],
+[appliedStereotypes~=EnvironmentProperty],
+[appliedStereotypes~=GeoPoliticalExtentType],
+[appliedStereotypes~=Location],
+[appliedStereotypes~=LocationHolder],
+[appliedStereotypes~=MeasurableElement],
+[appliedStereotypes~=Measurement],
+[appliedStereotypes~=MeasurementSet] {
+	fillColor: #31859C;
+	fontColor: #000000
+}
+
+/** Personnel */
+[appliedStereotypes~=Competence],
+[appliedStereotypes~=Organization],
+[appliedStereotypes~=OrganizationalResource],
+[appliedStereotypes~=Person],
+[appliedStereotypes~=Post],
+[appliedStereotypes~=Responsibility] {
+	fillColor: #FFFFFF;
+	fontColor: #000000
+}
+
+/** Projects */
+[appliedStereotypes~=MilestoneDependency],
+[appliedStereotypes~=ProjectSequence],
+[appliedStereotypes~=ProjectActivity],
+[appliedStereotypes~=ProjectActivityAction],
+[appliedStereotypes~=ActualProject],
+[appliedStereotypes~=ActualProjectMilestone],
+[appliedStereotypes~=ActualProjectMilestoneRole],
+[appliedStereotypes~=ActualProjectRole],
+[appliedStereotypes~=ProjectMilestoneRole],
+[appliedStereotypes~=ProjectRole],
+[appliedStereotypes~=ProjectStatus],
+[appliedStereotypes~=ProjectTheme],
+[appliedStereotypes~=StatusIndicators],
+[appliedStereotypes~=Project],
+[appliedStereotypes~=ProjectMilestone] {
+	fillColor: #CCC1DA;
+	fontColor: #000000
+}
+
+/** Resources */
+[appliedStereotypes~=ResourceInterface],
+[appliedStereotypes~=ResourceSignal],
+[appliedStereotypes~=ResourceSignalProperty],
+[appliedStereotypes~=ResourceConstraint],
+[appliedStereotypes~=SubjectOfResourceConstraint],
+[appliedStereotypes~=ResourceMessage],
+[appliedStereotypes~=Function],
+[appliedStereotypes~=FunctionAction],
+[appliedStereotypes~=Forecast],
+[appliedStereotypes~=SubjectOfForecast],
+[appliedStereotypes~=Technology],
+[appliedStereotypes~=VersionOfConfiguration],
+[appliedStereotypes~=VersionSuccession],
+[appliedStereotypes~=VersionedElement],
+[appliedStereotypes~=WholeLifeConfiguration],
+[appliedStereotypes~=ResourceStateDescription],
+[appliedStereotypes~=ResourceMethod],
+[appliedStereotypes~=ResourceParameter],
+[appliedStereotypes~=ResourcePort],
+[appliedStereotypes~=ResourceRole],
+[appliedStereotypes~=CapabilityConfiguration],
+[appliedStereotypes~=NaturalResource],
+[appliedStereotypes~=PhysicalResource],
+[appliedStereotypes~=ResourceArchitecture],
+[appliedStereotypes~=ResourceArtifact],
+[appliedStereotypes~=ResourcePerformer],
+[appliedStereotypes~=Software],
+[appliedStereotypes~=System],
+[appliedStereotypes~=ProtocolImplementation] {
+	fillColor: #FCD5B5;
+	fontColor: #000000
+}
+
+/** Security */
+[appliedStereotypes~=ActualRisk],
+[appliedStereotypes~=Risk],
+[appliedStereotypes~=SecurityConstraint],
+[appliedStereotypes~=SecurityControl],
+[appliedStereotypes~=SecurityControlFamily],
+[appliedStereotypes~=SubjectOfSecurityConstraint],
+[appliedStereotypes~=EnhancedSecurityControl],
+[appliedStereotypes~=SecurityProcess],
+[appliedStereotypes~=SecurityProcessAction],
+[appliedStereotypes~=AssetRole],
+[appliedStereotypes~=DataRole],
+[appliedStereotypes~=InformationRole],
+[appliedStereotypes~=Asset],
+[appliedStereotypes~=OperationalAsset],
+[appliedStereotypes~=OperationalMitigation],
+[appliedStereotypes~=ResourceAsset],
+[appliedStereotypes~=ResourceMitigation],
+[appliedStereotypes~=SecurityEnclave] {
+	fillColor: #B7DEE8;
+	fontColor: #000000
+}
+
+/** Services */
+[appliedStereotypes~=ServiceInterface],
+[appliedStereotypes~=ServicePolicy],
+[appliedStereotypes~=ServiceMessage],
+[appliedStereotypes~=ServiceFunction],
+[appliedStereotypes~=ServiceFunctionAction],
+[appliedStereotypes~=ServiceStateDescription],
+[appliedStereotypes~=ServiceMethod],
+[appliedStereotypes~=ServiceParameter],
+[appliedStereotypes~=ServicePort],
+[appliedStereotypes~=ServiceSpecificationRole],
+[appliedStereotypes~=ServiceSpecification] {
+	fillColor: #E6B9B8;
+	fontColor: #000000
+}
+
+/** Standards */
+[appliedStereotypes~=ProtocolLayer],
+[appliedStereotypes~=Protocol],
+[appliedStereotypes~=ProtocolStack],
+[appliedStereotypes~=Standard] {
+	fillColor: #C4BD97;
+	fontColor: #000000
+}
+
+/** Strategic */
+[appliedStereotypes~=ActualEnduringTask],
+[appliedStereotypes~=EnduringTask],
+[appliedStereotypes~=Achiever],
+[appliedStereotypes~=Desirer],
+[appliedStereotypes~=CapabilityRole],
+[appliedStereotypes~=StructuralPart],
+[appliedStereotypes~=TemporalPart],
+[appliedStereotypes~=ActualEnterprisePhase],
+[appliedStereotypes~=Capability],
+[appliedStereotypes~=EnterpriseGoal],
+[appliedStereotypes~=EnterprisePhase],
+[appliedStereotypes~=EnterpriseVision],
+[appliedStereotypes~=VisionStatement],
+[appliedStereotypes~=WholeLifeEnterprise] {
+	fillColor: #D7E4BD;
+	fontColor: #000000
+}
+
+/** Information */
+[appliedStereotypes~=DataElement],
+[appliedStereotypes~=ArchitectureMetadata],
+[appliedStereotypes~=DataModel],
+[appliedStereotypes~=Information],
+[appliedStereotypes~=Metadata],
+[appliedStereotypes~=InformationElement] {
+	fillColor: #BFBFBF;
+	fontColor: #000000
+}
+
+/** Dictionary */
+[appliedStereotypes~=Alias],
+[appliedStereotypes~=Definition],
+[appliedStereotypes~=SameAs] {
+	fillColor: #595959;
+	fontColor: #FFFFFF
+}
+
+/** Summary & Overview */
+[appliedStereotypes~=ArchitecturalDescription],
+[appliedStereotypes~=Architecture],
+[appliedStereotypes~=Concern],
+[appliedStereotypes~=Stakeholder],
+[appliedStereotypes~=UAFElement],
+[appliedStereotypes~=View],
+[appliedStereotypes~=Viewpoint] {
+	fillColor: #595959;
+	fontColor: #FFFFFF
+}
+
